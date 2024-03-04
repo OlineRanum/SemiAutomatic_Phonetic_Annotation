@@ -12,7 +12,7 @@ Currently available phoneme classes:
 #### 3D-LEX
 
 #### Evaluation: WLASL & SemLEX
-Evaluations of new phonetic labels are currently available with WLASL 2000 ISLR benchmark (Li et al., 2020), which has been combinet with the phonological annotations in ASL-LEX 2.0 (Sehyr et al., 2021) in Kezar et al., 2023. Please obtain the metadata for the merged ASL-LEX and WLASL benchmark from the original repository [https://github.com/leekezar/Modeling-ASL-Phonology/tree/main/training_data](Kezar et al., 2023). 
+Evaluations of new phonetic labels are currently available with WLASL 2000 ISLR benchmark (Li et al., 2020), which has been combinet with the phonological annotations in ASL-LEX 2.0 (Sehyr et al., 2021) in Kezar et al., 2023. Please obtain the metadata for the merged ASL-LEX and WLASL benchmark from the original repository [(Kezar et al., 2023)](https://github.com/leekezar/Modeling-ASL-Phonology/tree/main/training_data).
 
 Evaluations on SemLEX will be available soon. 
 
