@@ -1,7 +1,7 @@
 from src.utils.base import BaseAnnotationUtils
 from tqdm import tqdm
 
-import os, re, fnmatch, random
+import os, re, fnmatch
 
 import pandas as pd
 import numpy as np
@@ -166,7 +166,7 @@ class EuclideanDistance(BaseAnnotationUtils):
 
             #plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # Adjust layout to make room for the title
             
-            plt.savefig('figures/leastsquares_annotations.png', bbox_inches='tight')
+            plt.savefig('figures/euclidean_segmentation.png', bbox_inches='tight')
 
 
 
