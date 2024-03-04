@@ -27,8 +27,11 @@ class EuclideanDistance(BaseAnnotationUtils):
             # Get gloss name from directory title
             self.gloss = subdir[17:]
 
-            handshape_temp = [] 
+            handshape_temp = []
+            hand_counter = 0 
+            
             for hand in hands:
+                
                 pattern = 'P1'+hand+'_*.csv'
                 pattern_meta = 'P1'+hand+'_*Meta.json'
         
@@ -59,20 +62,29 @@ class EuclideanDistance(BaseAnnotationUtils):
 
                         else:
                             # If file not available, i.e. only handshape '5' was recorded, append -1
-                            handshape_temp.append(-1) 
-
+                            handshape_temp.append(-1)
+                            self.empty_data_counter += 1
+                            hand_counter += 1 
+                            if hand_counter == 2:
+                                self.empty_data_counter -= 2
+                                self.empty_data_counter_both_hands += 1  
                 except: 
-                    self.empt_dir += 1
                     handshape_temp.append(-1)
-                    continue
+                    self.empty_data_counter += 1
+                    hand_counter += 1 
+                    if hand_counter == 2:
+                        self.empty_data_counter -= 2
+                        self.empty_data_counter_both_hands += 1  
+
+
                 
             hs, _ = self.select_hand(handshape_temp)
             handshapes.append(hs)
             glosses.append(self.gloss)
 
-        print('empty_files: ', self.empty_data_counter)
-        print('empty_directories: ', self.empt_dir)
-        self.output_txt(glosses, handshapes)
+        print('Occurances where one hand recorded no data: ', self.empty_data_counter)
+        print('Occurances where both hands recorded no data: ', self.empty_data_counter_both_hands)
+        self.output_txt(glosses, handshapes, 'output/ED_labels.txt')
 
     def ED_estimation(self, time_series_row, cal = None):
         """ Calculate the Euclidean distance between the hand pose frames and the calibration poses.	
@@ -181,7 +193,7 @@ if __name__ == "__main__":
     """
     annotator.get_original_handshapes()
     glosses, handshapes = annotator.build_database()
-    annotator.output_txt(glosses, handshapes)
+    annotator.output_txt(glosses, handshapes,'output/ED_labels.txt')
     """
 
     gloss = 'zero'

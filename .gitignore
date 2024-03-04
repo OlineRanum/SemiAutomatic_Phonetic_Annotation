@@ -129,4 +129,7 @@ dmypy.json
 cython_debug/
 
 # Data
-/data
+/data/HE_raw_data
+/data/HE_raw_data_all
+semlex_metadata.csv
+wlasl_full.json

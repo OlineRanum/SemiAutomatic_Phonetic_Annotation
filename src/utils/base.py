@@ -38,7 +38,7 @@ class BaseAnnotationUtils:
         
         # Count empty data directories
         self.empty_data_counter = 0
-        self.empt_dir = 0
+        self.empty_data_counter_both_hands = 0
     
     def read_calibration(self, file_path):
         """ Reads the calibration data from a JSON file and returns it as a pandas dataframe.
@@ -119,7 +119,7 @@ class BaseAnnotationUtils:
             # Return the value with the highest proportion if no special values are present
             return filtered_proportions.idxmax()
 
-    def output_txt(self, glosses, handshapes, filename='output/ED_handshapes.txt'):
+    def output_txt(self, glosses, handshapes, filename):
         """ Writes glosses and handshapes to a file, with each pair on a new line.
         """
         with open(filename, 'w') as file:
@@ -147,7 +147,6 @@ class BaseAnnotationUtils:
             # This might be because no change in position was detected
             # Code goes on to check glove on other hand
             # If both files are empty, a label '5' will be given 
-            self.empty_data_counter += 1
             return None, None
 
     def select_hand(self, lst):
@@ -190,6 +189,33 @@ class BaseAnnotationUtils:
         chosen_index = random.choice([0, 1])
         return lst[chosen_index], chosen_index
 
+    def read_KMeans_dict(self, filename='KMeans_dict.txt'):
+        data = []
+
+        with open(filename, 'r') as file:
+            for line in file:
+                # Split the line into gloss and the dictionary part
+                gloss, dict_str = line.split(',', 1)
+                gloss = gloss.strip()
+                # Convert the dictionary string to an actual dictionary
+                values = ast.literal_eval(dict_str.strip())
+                # Extract the values you need, assuming 'Handshape' and 'ls_id' keys exist
+                row = {'gloss': gloss, 'mean_handshape': values['Handshape'], 'hs': values['ls_id']}
+                data.append(row)
+        
+        # Convert the list of dictionaries into a pandas DataFrame
+        df = pd.DataFrame(data)
+        return df
+
+    def write_dict_to_file(self, avg_dict, filename='kmeans_dict.txt'):
+        """
+        Writes glosses and handshapes to a file, with each pair on a new line.
+        """
+        with open(filename, 'w') as file:
+            for gloss, data in avg_dict.items():
+                file.write(f"{gloss}, {data}\n")
+        
+        print(f"Data has been written to {filename}.")
 
 
 if __name__ == "__main__":

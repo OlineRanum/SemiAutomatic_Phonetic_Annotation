@@ -1,5 +1,4 @@
 from src.euclidean_distance import EuclideanDistance
-import pandas as pd
 import argparse 
 import os 
 
@@ -14,9 +13,11 @@ if __name__ == "__main__":
     
     if args.mode == 'annotate':
         annotator.annotate()
-
-    if os.path.exists('output/LS_handshapes.txt'):  
         annotator.plot_ED_heatmap(args.gloss)
+
+    elif os.path.exists('output/ED_labels.txt'):  
+        annotator.plot_ED_heatmap(args.gloss)
+
     else:
         print('No annotations found, running annotations first.')
         annotator.annotate()
