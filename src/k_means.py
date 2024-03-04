@@ -96,20 +96,20 @@ class K_Means(EuclideanDistance):
                 pass       
 
         
-
-
         print('Occurances where one hand recorded no data: ', self.empty_data_counter)
         print('Occurances where both hands recorded no data: ', self.empty_data_counter_both_hands)
 
         
-        self.write_dict_to_file(avg_dict, filename='KMeans_dict.txt')
-    
-    def KMeans_estimation(self, df, k =50):
+        self.write_dict_to_file(avg_dict, filename='output/KMeans_dict.txt')
+
+
+    def KMeans_estimation(self, df, k =4):
         """ Calculate K-Means clustering for the handshapes to set new labels for the data.
         """
         kmeans = KMeans(n_clusters=k)
+        
         data = df['mean_handshape'].tolist()
-    
+
         kmeans.fit(data)
         labels = kmeans.labels_
         df['new_labels'] = labels
@@ -122,6 +122,8 @@ class K_Means(EuclideanDistance):
 
         
         tsne = TSNE(n_components=2, random_state=42)
+        
+        data = df['mean_handshape'].tolist()
         tsne_results = tsne.fit_transform(np.array(data))
 
         df['tsne-2d-one'] = tsne_results[:,0]
@@ -152,7 +154,7 @@ if __name__ == "__main__":
     annotator = K_Means()
 
     annotator.annotate()    
-    data = annotator.read_KMeans_dict(filename = 'KMeans_dict.txt')
+    data = annotator.read_KMeans_dict(filename = 'output/KMeans_dict.txt')
     df = annotator.KMeans_estimation(data)
     annotator.plot_KMeans_scatter(df)
     annotator.output_txt(df['gloss'], df['new_labels'], filename='output/kmeans_labels.txt')

@@ -1,6 +1,7 @@
 import json 
 import random
 import pandas as pd
+import ast 
 
 
 
@@ -64,7 +65,7 @@ class BaseAnnotationUtils:
         
         return df
     
-    def read_asllex_handshapes(self, benchmark_metadata = 'output/wlasl_989.json'):
+    def read_asllex_handshapes(self, benchmark_metadata = 'output/wlasl_subset.json'):
         """ Reads the handshapes from the ASLLex dataset and saves them to a file.
         Also sets the handshapes attribute of the class to the read data.
         """	
@@ -189,7 +190,7 @@ class BaseAnnotationUtils:
         chosen_index = random.choice([0, 1])
         return lst[chosen_index], chosen_index
 
-    def read_KMeans_dict(self, filename='KMeans_dict.txt'):
+    def read_KMeans_dict(self, filename='output/KMeans_dict.txt'):
         data = []
 
         with open(filename, 'r') as file:
@@ -207,7 +208,7 @@ class BaseAnnotationUtils:
         df = pd.DataFrame(data)
         return df
 
-    def write_dict_to_file(self, avg_dict, filename='kmeans_dict.txt'):
+    def write_dict_to_file(self, avg_dict, filename='output/kmeans_dict.txt'):
         """
         Writes glosses and handshapes to a file, with each pair on a new line.
         """
