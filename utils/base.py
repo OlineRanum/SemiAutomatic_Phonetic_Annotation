@@ -48,11 +48,12 @@ class AutoAnnotate:
         self.empt_dir = 0
     
     def read_calibration(self, file_path):
-        
+
         with open(file_path, 'r') as file:
             data = json.load(file)
         poses_data = []
         
+
         for pose_id, pose_info in data['calibration'][0]['poses'].items():
             pose_name = pose_info['name']
             joints = pose_info['joints'][3:]
@@ -61,12 +62,47 @@ class AutoAnnotate:
 
         # Create a DataFrame
         df = pd.DataFrame(poses_data, columns=['Pose Name', 'Joints'])
+        
         df.set_index('Pose Name', inplace=True)
+        droprows = ['Fist', 'Paddle', 'Reach', 'Fist Thumb Out', 'Thumbs Up', 'open_b_tight']
+        for row in droprows:
+            if row in df.index:
+                df = df.drop(index=row)
+
+        
         
         return df
+
+    
+            
+    def get_handshape(self, df):
+
+        value_counts = df['closest_calibration'].value_counts(dropna=False)
+        return self.calculate_value_proportions(value_counts)
+    
+
+
+    def write_glosses_and_handshapes_to_file(self, glosses, handshapes, filename='gloss_handshape_pairs.txt'):
+        """
+        Writes glosses and handshapes to a file, with each pair on a new line.
+
+        :param glosses: List of glosses.
+        :param handshapes: List of handshapes.
+        :param filename: Name of the file to write to.
+        """
+        if len(glosses) != len(handshapes):
+            print("The lists glosses and handshapes must be of the same length.")
+            return
+        
+        with open(filename, 'w') as file:
+            for gloss, handshape in zip(glosses, handshapes):
+                file.write(f"{gloss}, {handshape}\n")
+        
+        print(f"Data has been written to {filename}.")
         
     
     def load_sample(self, subdir, file):
+        
         try:
             df = pd.read_csv(subdir +'/'+ file)
             df.columns = df.columns.str.replace(' ', '')
@@ -80,7 +116,7 @@ class AutoAnnotate:
             return None, None
 
     
-    def plot_handshape_timeseries(self, df):
+    def plot_handshape_timeseries(self, df, cal):
         # Plot time evolution of a single handshape 
         plt.figure(figsize=(10, 6))
         colors = ['mistyrose',  'orchid',
@@ -112,7 +148,10 @@ class AutoAnnotate:
             except:
                 pass    
         for i, column in enumerate(df.columns):
-            print(self.calibration.loc['1']['Joints'])
+            try:
+                a = self.calibration.loc['1']['Joints']
+            except AttributeError:
+                self.calibration = cal
             try:
                 plt.plot(df.index, np.full(len(df.index),self.calibration.loc['1']['Joints'][i]),'--', color=colors[i],)
             except:
@@ -133,6 +172,7 @@ if __name__ == "__main__":
 
     # Creating an instance of MyClass
     annotator = AutoAnnotate()
-    data = annotator.build_database()
-    merged_df = pd.merge(data, annotator.semlex, on='label', how='inner')
-
+    df, _ = annotator.load_sample('data/HE_raw_data/add', '/P1L_Daniel.csv')
+    cal = annotator.read_calibration('data/HE_raw_data/add/Cal_P1L_Daniel.json')
+    annotator.plot_handshape_timeseries(df, cal)
+    annotator.scatter_plot(df)
