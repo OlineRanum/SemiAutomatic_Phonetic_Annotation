@@ -13,6 +13,7 @@ Experiments currently available for the following phonetic classes:
 3. setup environment: 
 
     bash setup/setup.sh
+    
     conda activate saa
 
 
