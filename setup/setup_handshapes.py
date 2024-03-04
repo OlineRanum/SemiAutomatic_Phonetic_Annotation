@@ -44,7 +44,7 @@ if __name__ == "__main__":
     parser.add_argument('--datasets', type=str, help='select datasets for preparation',choices=['WLASL', 'SemLex'], default='WLASL')
     parser.add_argument('--directory_path', type=str, help='path to HE directory', default='data/HE_raw_data')
     parser.add_argument('--metadata_file', type=str, help='name of benchmark metadata file', default='data/wlasl_full.json')
-    parser.add_argument('--output_file', type=str, help='destination of metadata containing subset corresponding to HE data', default='output/wlasl_subset.json')
+    parser.add_argument('--output_file', type=str, help='destination of metadata containing subset corresponding to HE data', default='data/wlasl_subset.json')
     
     
     args = parser.parse_args()

@@ -65,7 +65,7 @@ class BaseAnnotationUtils:
         
         return df
     
-    def read_asllex_handshapes(self, benchmark_metadata = 'output/wlasl_subset.json'):
+    def read_asllex_handshapes(self, benchmark_metadata = 'data/wlasl_subset.json'):
         """ Reads the handshapes from the ASLLex dataset and saves them to a file.
         Also sets the handshapes attribute of the class to the read data.
         """	
@@ -84,7 +84,6 @@ class BaseAnnotationUtils:
         with open('output/original_asllex_handshapes.json', 'w') as outfile:
             json.dump(gloss_handshape_dict, outfile, indent=4)
 
-        print("Data has been processed and saved.")
         self.handshapes = gloss_handshape_dict
        
     def select_new_handshape(self, df, filterratio = 0.1):
