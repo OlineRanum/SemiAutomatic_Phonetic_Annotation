@@ -2,9 +2,9 @@
 
 This repository contains the code to perform semi-autmatic annotations of phonetic properties based on the 3D-LEX dataset, and to reproduce the results of the paper: _3D-LEX v1.0: 3D Lexicons for American Sign Language and Sign Language of the Netherlands_.
 
-Currently available phoneme classes: 
+Experiments currently available for the following phonetic classes:
 
-    - Handshapes
+    Handshapes
 
 ## Setup (Linux)
 
