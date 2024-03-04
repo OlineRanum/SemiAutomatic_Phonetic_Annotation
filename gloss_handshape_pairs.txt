@@ -1,4 +1,0 @@
-agreement, p
-zero, o
-accident, o
-act, o
