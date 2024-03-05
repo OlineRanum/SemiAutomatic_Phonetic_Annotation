@@ -34,9 +34,6 @@ cd data/wlasl/
 unzip WLASL.zip?download=1
 rm WLASL.zip?download=1
 
-
-
-
 _Evaluations on SemLEX will be available soon._
 
 ## Demos
@@ -44,11 +41,21 @@ _Evaluations on SemLEX will be available soon._
 To produce new handshape labels run either
 
     python main_ED.py --mode annotate
+    
     python main_KMeans.py --mode annotate
 
 
 ### Evaluation
-_Downstream evaluation on ISR coming soon._
+To perform evaluations using openhands on the wlasl benchmark, please run:
+
+    cd evaluation/isolated_sign_recognition/
+    
+    python train.py
+
+    # Edit model path in evaluation/isolated_sign_recognition/configs/gcn_test.yaml
+    
+    python test.py
+
 
 
 ## Citation
