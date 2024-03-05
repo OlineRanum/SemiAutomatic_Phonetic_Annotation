@@ -8,8 +8,8 @@ Experiments currently available for the following phonetic classes:
 
 ## Setup (Linux)
 
-1. Download 3D-LEX dataset
-2. Download the WLASL/SemLEX metadata files 
+1. Download 3D-LEX dataset (_instructions coming soon_)
+2. Download the WLASL/SemLEX metadata files (_instructions below_)
 3. setup environment: 
 
     bash setup/setup.sh
@@ -41,7 +41,7 @@ _Evaluations on SemLEX will be available soon._
 To produce new handshape labels run either
 
     python main_ED.py --mode annotate
-    
+
     python main_KMeans.py --mode annotate
 
 
