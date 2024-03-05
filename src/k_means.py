@@ -89,7 +89,8 @@ class K_Means(EuclideanDistance):
             try:
                 df = df[df['closest_calibration'] == hs].drop('closest_calibration', axis=1)
                 mean = df.mean().tolist()
-                avg_dict[self.gloss] = {'Handshape': mean, 'ls_id': hs}
+                if not np.isnan(mean).any():
+                    avg_dict[self.gloss] = {'Handshape': mean, 'ls_id': hs}
 
             except (KeyError, TypeError):
                 print('Data Error, check directory:',   subdir)
