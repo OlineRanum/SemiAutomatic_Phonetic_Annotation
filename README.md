@@ -28,14 +28,14 @@ Evaluations of new phonetic labels are currently available with WLASL 2000 ISLR 
 
 For performing the evaluations on an ISR task please download the WLASL pose data from the [openhands repositroy](https://openhands.ai4bharat.org/en/latest/instructions/datasets.html) or by running the following commands: 
 
-
+```
 mkdir data/wlasl/
 wget https://zenodo.org/record/6674324/files/WLASL.zip?download=1
 mv WLASL.zip?download=1 data/wlasl/
 cd data/wlasl/
 unzip WLASL.zip?download=1
 rm WLASL.zip?download=1
-
+```
 _Evaluations on SemLEX will be available soon._
 
 ## Demos
