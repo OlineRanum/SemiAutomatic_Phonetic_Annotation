@@ -12,10 +12,10 @@ Experiments currently available for the following phonetic classes:
 2. Download the WLASL/SemLEX data files (_instructions below_)
 3. setup environment: 
 
-    bash setup/setup.sh
-
-    conda activate saa
-
+```
+bash setup/setup.sh
+conda activate saa
+```
 
 
 ## Datasets
@@ -42,22 +42,20 @@ _Evaluations on SemLEX will be available soon._
 ### Phonetic Labeling with StretchSense Gloves
 To produce new handshape labels run either
 
-    python main_ED.py --mode annotate
-
-    python main_KMeans.py --mode annotate
-
+```
+python main_ED.py --mode annotate
+python main_KMeans.py --mode annotate
+```
 
 ### Evaluation
 To perform evaluations using openhands on the wlasl benchmark, please run:
 
-    cd evaluation/isolated_sign_recognition/
-    
-    python train.py
-
-    # Edit model path in evaluation/isolated_sign_recognition/configs/gcn_test.yaml
-    
-    python test.py
-
+```
+cd evaluation/isolated_sign_recognition/
+python train.py
+# Edit model path in evaluation/isolated_sign_recognition/configs/gcn_test.yaml
+python test.py
+```
 
 
 ## Citation
