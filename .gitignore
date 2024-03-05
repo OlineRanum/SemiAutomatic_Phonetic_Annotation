@@ -128,9 +128,16 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+
 # Data
+data/wlasl/
 data/HE_raw_data/
 data/HE_raw_data_full/
 *.txt
 *.csv	
 *.json
+
+evaluation/isolated_sign_recognition/logs
+evaluation/isolated_sign_recognition/wandb
+
+*.DS_Store
