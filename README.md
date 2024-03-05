@@ -9,7 +9,7 @@ Experiments currently available for the following phonetic classes:
 ## Setup (Linux)
 
 1. Download 3D-LEX dataset (_instructions coming soon_)
-2. Download the WLASL/SemLEX metadata files (_instructions below_)
+2. Download the WLASL/SemLEX data files (_instructions below_)
 3. setup environment: 
 
     bash setup/setup.sh
@@ -24,7 +24,9 @@ _Data will be made available upon publication of the associated paper._
 
 
 #### Evaluation: WLASL & SemLEX
-Evaluations of new phonetic labels are currently available with WLASL 2000 ISLR benchmark [(Li et al., 2020)](https://arxiv.org/abs/1910.11006), which has been combinet with the phonological annotations in ASL-LEX 2.0 [(Sehyr et al., 2021)](https://academic.oup.com/jdsde/article/26/2/263/6142509) in Kezar et al., 2023. Please obtain the metadata for the merged ASL-LEX and WLASL benchmark from the original repository [(Kezar et al., 2023)](https://github.com/leekezar/Modeling-ASL-Phonology/tree/main/training_data) and WLASL pose data from the [openhands repositroy](https://openhands.ai4bharat.org/en/latest/instructions/datasets.html) for evaluations or 
+Evaluations of new phonetic labels are currently available with WLASL 2000 ISLR benchmark [(Li et al., 2020)](https://arxiv.org/abs/1910.11006), which has been combinet with the phonological annotations in ASL-LEX 2.0 [(Sehyr et al., 2021)](https://academic.oup.com/jdsde/article/26/2/263/6142509) in Kezar et al., 2023. Please obtain the metadata for the merged ASL-LEX and WLASL benchmark from the original repository [(Kezar et al., 2023)](https://github.com/leekezar/Modeling-ASL-Phonology/tree/main/training_data). 
+
+For performing the evaluations on an ISR task please download the WLASL pose data from the [openhands repositroy](https://openhands.ai4bharat.org/en/latest/instructions/datasets.html) or by running the following commands: 
 
 
 mkdir data/wlasl/
