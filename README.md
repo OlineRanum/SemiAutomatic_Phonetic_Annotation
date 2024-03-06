@@ -30,7 +30,7 @@ This figure showcases the distribution of new handshape labels produced using a 
 <tr>
 <td style="border: none;">
 
-<img src="figures/euclidean_segmentation.png" alt="Handshape Distribution"  width="1000" />
+<img src="figures/euclidean_segmentation.png" alt="Handshape Distribution"  width="1100" />
 
 
 </td>
