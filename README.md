@@ -61,30 +61,26 @@ This figure showcases the distribution of new handshape labels produced using a 
 </tr>
 </table>
 <br><br>
-<div style="display: flex; align-items: center;">
-  <div>
-    <table style="border-collapse: collapse; margin-right: 20px;">
-      <thead>
-        <tr>
-          <th style="border: 1px solid black; padding: 5px;"><i>a</i><sub>1</sub><sup>N</sup></th>
-          <th style="border: 1px solid black; padding: 5px;"><i>a</i><sub>1</sub><sup>E</sup></th>
-          <th style="border: 1px solid black; padding: 5px;"><i>a</i><sub>1</sub><sup>A</sup></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="border: 1px solid black; padding: 5px;">0.44<sub>±0.01</sub></td>
-          <td style="border: 1px solid black; padding: 5px;">0.48<sub>±0.01</sub></td>
-          <td style="border: 1px solid black; padding: 5px;"><strong>0.49<sub>±0.01</sub></strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div>
-    <p><strong>Top-1 recognition accuracy</strong>: Accuracy using no (N) handshape labels, expert (E) labels, and automatic (A) labels. The accuracies are averaged across 8 runs. Standard deviation across measurements is provided in the subscripts.</p>
-  </div>
-</div>
 
+### Evaluation on the isolated sign recognition task
+
+<table>
+  <thead>
+    <tr>
+      <th><i>a</i><sub>1</sub><sup>N</sup></th>
+      <th><i>a</i><sub>1</sub><sup>E</sup></th>
+      <th><i>a</i><sub>1</sub><sup>A</sup></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.44<sub>&plusmn;0.01</sub></td>
+      <td>0.48<sub>&plusmn;0.01</sub></td>
+      <td><strong>0.49<sub>&plusmn;0.01</sub></strong></td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Top-1 recognition accuracy</strong>: Accuracy using no (N) handshape labels, expert (E) labels, and automatic (A) labels. The accuracies are averaged across 8 runs. Standard deviation across measurements is provided in the subscripts.</p>
 
 
 ## Setup (Linux)
