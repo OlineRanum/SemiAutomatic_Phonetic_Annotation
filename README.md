@@ -6,6 +6,24 @@ Experiments currently available for the following phonetic classes:
 
     Handshapes
 
+
+<table>
+<tr>
+<td>
+
+![Handshape Distribution](figures/handshape_distributions.png)
+
+</td>
+<td>
+**Distribution of Handshapes**
+
+This codebase demonstrates how to provide
+
+</td>
+</tr>
+</table>
+
+
 ## Setup (Linux)
 
 1. Download 3D-LEX dataset (_instructions coming soon_)
