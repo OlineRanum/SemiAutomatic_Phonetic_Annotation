@@ -23,13 +23,14 @@ This figure showcases the distribution of new handshape labels produced using a 
 
 </td>
 </tr>
-</table><br>
+</table>
+<br>
 
 <table style="border-collapse: collapse; border: none;">
 <tr>
 <td style="border: none;">
 
-<img src="figures/euclidean_segmentation.png" alt="Handshape Distribution"  width="500" />
+<img src="figures/euclidean_segmentation.png" alt="Handshape Distribution"  width="700" />
 
 
 </td>
@@ -42,7 +43,7 @@ This figure showcases the distribution of new handshape labels produced using a 
 
 </td>
 </tr>
-</table>
+</table> <br>
 
 <table style="border-collapse: collapse; border: none;">
 <tr>
