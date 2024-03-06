@@ -7,18 +7,19 @@ Experiments currently available for the following phonetic classes:
     Handshapes
 
 
-<table>
+<table style="border-collapse: collapse; border: none;">
 <tr>
-<td>
+<td style="border: none;">
 
-<img src="figures/handshape_distributions.png" alt="Handshape Distribution" title="Image Title Here" width="300" />
+<img src="figures/handshape_distributions.png" alt="Handshape Distribution" title="Image Title Here" width="400" />
 
 
 </td>
-<td>
-**Distribution of Handshapes**
+<td style="border: none;">
 
-This codebase demonstrates how to produce new phonetic annotation leveraging data. In this figure new handshape labels have been provided using a k-means clustering algorithm. 
+<span style="font-weight: bold;">Distribution of Handshape labels</span>
+
+This figure showcases the distribution of new handshape labels produced using a k-means clustering algorithm on the StretchSense glove data for 1000 glosses, as compared to the distribution of handshape labels provided by expert linguists (ASL-LEX 2.0).
 
 </td>
 </tr>
