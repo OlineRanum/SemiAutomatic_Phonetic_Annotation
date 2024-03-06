@@ -11,7 +11,7 @@ Experiments currently available for the following phonetic classes:
 <tr>
 <td style="border: none;">
 
-<img src="figures/handshape_distributions.png" alt="Handshape Distribution" title="Image Title Here" width="400" />
+<img src="figures/handshape_distributions.png" alt="Handshape Distribution"  width="500" />
 
 
 </td>
@@ -29,7 +29,7 @@ This figure showcases the distribution of new handshape labels produced using a 
 <tr>
 <td style="border: none;">
 
-<img src="figures/euclidean_segmentation.png" alt="Handshape Distribution" title="Image Title Here" width="400" />
+<img src="figures/euclidean_segmentation.png" alt="Handshape Distribution"  width="500" />
 
 
 </td>
@@ -48,7 +48,7 @@ This figure showcases the distribution of new handshape labels produced using a 
 <tr>
 <td style="border: none;">
 
-<img src="figures/k_meansn.png" alt="Handshape Distribution" title="Image Title Here" width="400" />
+<img src="figures/k_means.png" alt="Handshape Distribution"  width="500" />
 
 
 </td>
