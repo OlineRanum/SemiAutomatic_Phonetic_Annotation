@@ -11,13 +11,14 @@ Experiments currently available for the following phonetic classes:
 <tr>
 <td>
 
-![Handshape Distribution](figures/handshape_distributions.png)
+<img src="figures/handshape_distributions.png" alt="Handshape Distribution" title="Image Title Here" width="300" />
+
 
 </td>
 <td>
 **Distribution of Handshapes**
 
-This codebase demonstrates how to provide
+This codebase demonstrates how to produce new phonetic annotation leveraging data. In this figure new handshape labels have been provided using a k-means clustering algorithm. 
 
 </td>
 </tr>
