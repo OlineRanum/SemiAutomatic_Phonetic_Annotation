@@ -23,8 +23,45 @@ This figure showcases the distribution of new handshape labels produced using a 
 
 </td>
 </tr>
+</table><br>
+
+<table style="border-collapse: collapse; border: none;">
+<tr>
+<td style="border: none;">
+
+<img src="figures/euclidean_segmentation.png" alt="Handshape Distribution" title="Image Title Here" width="400" />
+
+
+</td>
+<td style="border: none;">
+
+<span style="font-weight: bold;">Temporal Segmentation from Euclidean Distance</span>
+
+<p><strong>Time-series visualization of handshape classification:</strong><br> Classification of the ASL sign "<em>zero</em>" with expert label "<em>o</em>". The bars denote captured frames, triggered by positional shifts, with colors denoting handshapes identified by the Euclidean distance method. Our segmentation pipeline identifies handshapes "<em>5</em>", "<em>f</em>", "<em>c</em>", and "<em>o</em>", selecting frames corresponding to "<em>o</em>" as the characteristic signal of "<em>zero</em>".</p>
+
+
+</td>
+</tr>
 </table>
 
+<table style="border-collapse: collapse; border: none;">
+<tr>
+<td style="border: none;">
+
+<img src="figures/k_meansn.png" alt="Handshape Distribution" title="Image Title Here" width="400" />
+
+
+</td>
+<td style="border: none;">
+
+<span style="font-weight: bold;">Temporal Segmentation from Euclidean Distance</span>
+
+<strong>t-SNE projection</strong>:<br> A projection of average hand poses to two dimensions from the selected temporal ranges, color-coded with a k(=50)-means cluster label for visualization purposes.
+
+
+</td>
+</tr>
+</table>
 
 ## Setup (Linux)
 
